@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1>Welcome, <%= current_user.name.titleize %>!</h1>
+  <p>Here is your current status:</p>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      Current Points and Tier
+    </div>
+    <div class="card-body">
+      <p>Tier: <%= current_user.tier %></p>
+    </div>
+  </div>
+</div>
