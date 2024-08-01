@@ -1,0 +1,6 @@
+# config/schedule.yml
+
+# Runs on the first day of each month
+CheckForFreeCoffeeJob:
+  cron: '0 0 1 * *'
+  class: 'CheckRewardsJob'
