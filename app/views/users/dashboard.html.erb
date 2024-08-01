@@ -12,6 +12,34 @@
     </div>
   </div>
 
+  <div class="card mb-4">
+    <div class="card-header">
+      Your Rewards
+    </div>
+    <div class="card-body">
+      <% if @rewards.any? %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @rewards.each do |reward| %>
+              <tr>
+                <td><%= reward.name.titleize %></td>
+                <td><%= reward.reward_type %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>No rewards earned yet.</p>
+      <% end %>
+    </div>
+  </div>
+
   <div>
     <%= link_to 'View Payouts', payouts_path, class: 'btn btn-primary' %>
   </div>
