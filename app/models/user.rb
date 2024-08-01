@@ -6,6 +6,12 @@ class User < ApplicationRecord
 
   enum tier: { standard: 0, gold: 1, platinum: 2 }
 
+  # Associations
+  has_many :payouts, dependent: :destroy
+  has_many :rewards, through: :user_rewards
+  has_many :user_rewards, dependent: :destroy
+
+  # Validations
   validates :dob, presence: true
   validate :valid_dob
 
