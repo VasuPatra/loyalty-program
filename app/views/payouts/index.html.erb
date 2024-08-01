@@ -1,0 +1,27 @@
+<div class="card mb-4">
+	<div class="card-header">
+		Your Payouts
+	</div>
+	<div class="card-body">
+		<% if @payouts.any? %>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Amount</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @payouts.each do |payout| %>
+						<tr>
+							<td><%= payout.amount %></td>
+							<td><%= payout.created_at %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		<% else %>
+			<p>No payouts found.</p>
+		<% end %>
+	</div>
+</div>

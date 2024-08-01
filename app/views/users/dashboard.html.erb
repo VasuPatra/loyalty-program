@@ -8,6 +8,11 @@
     </div>
     <div class="card-body">
       <p>Tier: <%= current_user.tier %></p>
+      <p>Points: <%= current_user.total_points %></p>
     </div>
+  </div>
+
+  <div>
+    <%= link_to 'View Payouts', payouts_path, class: 'btn btn-primary' %>
   </div>
 </div>
