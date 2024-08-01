@@ -1,0 +1,14 @@
+# config/schedule.yml
+
+# Runs on the first day of each month
+check_for_rewards:
+  cron: '0 0 1 * *'
+  class: 'CheckRewardsJob'
+
+reset_user_points:
+  cron: 0 0 1 1 *'
+  class: 'ResetPointsJob'
+
+award_quarterly_bonus_points:
+  cron: '0 0 1 */3 *'
+  class: 'QuarterlyBonusPointsJob'
